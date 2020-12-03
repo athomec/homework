@@ -1,0 +1,547 @@
+@charset "utf-8";
+@import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-size: $font-size-base;
+    font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+}
+h1 {
+    font-size: $h1-font-size;
+    @include iPad{
+        font-size: $font-size-base*3;
+    }
+    @include mobile-md{
+        font-size: $font-size-base*2;
+    }
+}
+h2 {
+    font-size: $h2-font-size;
+    @include iPad{
+        font-size: $font-size-base*2;
+    }
+    @include mobile-md{
+        font-size: $font-size-base*1.5;
+    }
+}
+.subttile {
+    color: $theme-color2;
+    text-align: center;
+}
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+a {
+    display: block;
+    text-decoration: none;
+}
+.p-1 {
+    padding: $mp-base;
+}
+.pt-3 {
+    padding-top: $mp-base*3;
+}
+.pb-3{
+    padding-bottom: $mp-base*3;
+}
+.pt-4 {
+    padding-top: $mp-base*4;
+    @include mobile-md{
+        padding-top:$mp-base*2;
+    }
+}
+.pb-4 {
+    padding-bottom: $mp-base*4;
+    @include mobile-md{
+        padding-bottom:$mp-base*2;
+    }
+}
+.mr-1{
+    margin-right: $mp-base;
+}
+.mb-1 {
+    margin-bottom: $mp-base;
+}
+.mb-2 {
+    margin-bottom: $mp-base*2;
+}
+.mb-3 {
+    margin-bottom: $mp-base*3;
+}
+.mb-4 {
+    margin-bottom: $mp-base*4;
+    @include mobile-md{
+        margin-bottom:$mp-base-mobile*4;
+     }
+}
+.container {
+    width: 95%;
+    max-width: 1110px;
+    margin: 0 auto;
+    @include iPad{
+        max-width: 690px;
+    }
+    @include mobile-md{
+       max-width: 345px;
+    }
+}
+header {
+    background: $theme-color1;
+    color: $white-color;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 88px;
+    @include iPad{
+        padding:0 39px;
+    }
+    @include mobile-md{
+        padding: 0;
+        flex-wrap: wrap;
+    }
+    .header-logo{
+        width: 80px;
+        height: 49px;
+        background: url("../img/logo.png") no-repeat center;
+        background-size: cover;
+        text-indent: 101%;
+        white-space: nowrap;
+        overflow: hidden;
+        margin-top: 20px;
+        @include mobile-md{
+            width: 100%;
+            background-size: 48px auto;
+            margin-top: 0;
+            border-bottom: 1px solid $white-color;
+        }
+    }
+    .logo {
+        width: 80px;
+        height: 48px;
+        margin: 30px 0;
+    }
+}
+.menu {
+    display: flex;
+    align-items: center;
+    @include mobile-md{
+        width: 100%;
+        flex-wrap: wrap;
+        li{
+            width: 50%;
+            border-bottom: 1px solid $white-color;
+            border-right: 1px solid $white-color;
+            &:nth-child(even){
+                border-right: none;
+            }
+        }
+    }
+    a {
+        display: block;
+        padding: 30px 32px;
+        color: $white-color;
+        font-size: $font-size-base * 1.25;
+        @include mobile-md{
+            text-align: center;
+            padding: 8px 0;
+        }
+        &:hover {
+            background: $theme-color2;
+        }
+    }
+}
+.main {
+    height: 840px;
+    background: url("../img/banner.png") no-repeat center;
+    background-size: cover;
+    color: $theme-color2;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    @include mobile-md{
+        height: 394px;
+    }
+    .main-title {
+        line-height: 96px;
+        @include mobile-md{
+            line-height: 45px;
+        }
+    }
+    .main-title-small {
+        display: block;
+        font-size: $font-size-base * 2.25;
+        line-height: 50px;
+        font-weight: 600;
+        @include iPad{
+            font-size: $font-size-base*1.25;
+        }
+        @include mobile-md{
+            font-size: $font-size-base;
+        }
+    }
+}
+.service {
+    background: $theme-color3;
+}
+.img-list {
+    display: flex;
+    @include iPad{
+        flex-wrap: wrap;
+    }
+    li {
+        width: 19%;
+        margin: 0 3%;
+        @include iPad{
+            width: 40%;
+            margin: 0 5%;
+        }
+        @include mobile-md{
+            width: 60%;
+            margin: 0 20%;
+            margin-bottom: 40px;
+        }
+    }
+    .img-list-img {
+        margin: 0 auto;
+        margin-bottom: 39px;
+        @include mobile-md{
+            margin-bottom: 1px;
+        }
+    }
+    .img-list-title {
+        font-size: $font-size-base * 1.5;
+        color: $theme-color2;
+        text-align: center;
+        line-height: 36px;
+        @include mobile-md{
+            font-size: $font-size-base*1.25;
+        }
+    }
+}
+.series-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 32px;
+    position: relative;
+    @include iPad{
+        margin-bottom: 8px;
+    }
+    @include mobile-md{
+        flex-direction: column;
+    }
+    .series-img {
+        max-width: 635px;
+        @include iPad{
+            max-width: 390px;
+        }
+        @include mobile-md{
+            max-width: 100%;
+        }
+    }
+    .series-title-box{
+        display: flex;
+        padding: 0 30px;
+        @include mobile-md{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            width: 100%;
+            height: 138px;
+        }
+    }
+    .series-title {
+        font-size: $font-size-base * 3;
+        color: $theme-color1;
+        font-style: italic;
+        @include iPad{
+            font-size:$font-size-base*1.75 ;
+        }
+        @include mobile-md{
+            color: $white-color;
+        }
+    }
+    .series-icon {
+        margin: 0 8px 0 0;
+        @include iPad{
+            width: 30px;
+        }
+        @include mobile-md{
+            filter: brightness(300);
+        }
+    }
+    &:nth-child(odd) {
+        flex-direction: row-reverse;
+        @include iPad{
+            flex-direction: row;
+        }
+    }
+}
+
+.co-branding {
+    background: url("../img/bg.png") no-repeat center;
+    background-size: cover;
+    .subttile {
+        color: $white-color;
+    }
+}
+.brand {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .brand-item {
+        width: 49%;
+        position: relative;
+        @include mobile-md{
+            width: 100%;
+            margin-bottom: 16px;
+        }
+    }
+    .brand-item-title {
+        position: absolute;
+        display: flex;
+        font-size: $font-size-base * 4.5;
+        color: $theme-color1;
+        background: rgba(255, 255, 255, 0.5);
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        @include iPad{
+            font-size: $font-size-base*2;
+        }
+    }
+}
+.comment {
+    display: flex;
+    justify-content: space-between;
+    @include iPad{
+        flex-wrap: wrap;
+    }
+    .comment-item {
+        width: 22%;
+        border: 1px solid $theme-color4;
+        @include iPad{
+            width: 47%;
+            margin-bottom: 28px;
+        }
+        @include mobile-md{
+            width: 100%;
+            img{
+                width: 100%;
+            }
+        }
+    }
+    .comment-title {
+        color: $theme-color5;
+        font-size: $font-size-base * 0.8;
+    }
+    .comment-txt {
+        color: $theme-color5;
+    }
+    .comment-time {
+        color: $theme-color6;
+        font-size: $font-size-base * 0.8;
+    }
+}
+.contact {
+    background: $theme-color3;
+    .container {
+        max-width: 730px;
+        @include iPad{
+            max-width: 450px;
+        }
+        @include mobile-md{
+            max-width: 345px;
+        }
+    }
+    .subttile {
+        color: $black-color;
+    }
+    .contact-txt {
+        font-size: $font-size-base * 1.25;
+        font-weight: 500;
+    }
+    label {
+        font-size: $font-size-base;
+        margin-bottom: 8px;
+    }
+    .agree{
+        display: flex;
+        label{
+            margin-left: 5px;
+        }
+    }
+    input {
+        &.txt {
+            display: block;
+            width: 100%;
+            height: 50px;
+            background: none;
+            font-size: $font-size-base;
+        }
+        &.check {
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+        }
+        &.submit {
+            width: 100%;
+            border: 0;
+            height: 54px;
+            line-height: 54px;
+            font-size: $font-size-base;
+            @include btn($theme-color1);
+            cursor: pointer;
+        }
+    }
+}
+.footer{
+    background: $theme-color1;
+    .container{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        @include mobile-md{
+            flex-direction: row-reverse;
+        }
+    }
+    .footer-menu{
+        display: flex;
+        @include iPad{
+            margin-bottom: 24px;
+        }
+        @include mobile-md{
+            display: none;
+        }
+        .footer-menu-link{
+            margin-right: 48px;
+            &:last-child{
+                margin-right: 0;
+            }
+        }
+        a{
+            color: $white-color;
+            &:hover{
+                opacity: .8;
+            }
+        }
+    }
+    .footer-media{
+        display: flex;
+        .footer-media-item{
+            margin-left: 32px;
+            &:first-child{
+                margin-left: 0;
+            }
+            @include iPad{
+                img{
+                    width: 24px;
+                }
+            }
+            @include mobile-md{
+                margin-left: 24px;
+            }
+        }
+        a{
+            &:hover{
+                img{
+                    opacity: .8;
+                }
+            }
+        }
+    }
+    .footer-info{
+        width: 100%;
+        @include mobile-md{
+            width: auto;
+        }
+        .footer-info-item{
+            display: flex;
+            color: $white-color;
+            font-size: $font-size-base*2.25;
+            @include iPad{
+                font-size: $font-size-base*1.25;
+                margin-bottom: 8px;
+                img{
+                    width: 32px;
+                }
+            }
+            @include mobile-md{
+                font-size: $font-size-base;
+                img{
+                    width: 20px;
+                }
+            }
+        }
+        a{
+            color: $white-color;
+            &:hover{
+                opacity: .8;
+            }
+        }
+    }
+    .footer-copyright{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        border-top: 1px solid $white-color;
+        padding-top: 24px;
+        color: $white-color;
+        position: relative;
+        @include mobile-md{
+            flex-wrap: wrap;
+        }
+        .footer-copyright-logo{
+            width: 80px;
+            @include iPad{
+                display: none;
+            }
+            @include mobile-md{
+                display: block;
+                width: 46px;
+                position: absolute;
+                right: 0;
+                bottom: 0;
+            }
+        }
+        .footer-copyright-copy{
+            display: flex;
+            align-items: start;
+            @include mobile-md{
+                width: 100%;
+            flex-direction: column-reverse;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            }
+        }
+        .footer-copyright-link{
+            display: flex;
+            @include mobile-md{
+               flex-wrap: wrap;
+            }
+            li{
+                margin-left: 64px;
+                @include mobile-md{
+                    width: 100%;
+                    margin-left: 0;
+                }
+                &:first-child{
+                    margin-left: 0;
+                }
+            }
+            a{
+                color: $white-color;
+                &:hover{
+                    opacity: .8;
+                }
+            }
+        }
+    }
+}

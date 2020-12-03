@@ -1,0 +1,59 @@
+/* 變數設定 */
+$theme-color1: #aa0601;
+$theme-color2: #650300;
+$theme-color3: #fbf2f2;
+$theme-color4: #dee2e6;
+$theme-color5: #212529;
+$theme-color6: #707070;
+$theme-color7: #DCDCDC;
+
+$white-color: #fff;
+$black-color: #000;
+
+$font-size-base: 1rem;
+$mp-base:16px;
+$mp-base-mobile:5px;
+$h1-font-size: $font-size-base * 4;
+$h2-font-size: $font-size-base * 3;
+
+/* 按鈕設定 */
+@mixin btn($bgcolor) {
+    color: $white-color;
+    background: $bgcolor;
+    &:hover {
+        color: $white-color;
+        background: darken($color: $bgcolor, $amount: 5%);
+    }
+}
+/* RWD斷點設定 */
+@mixin PC{
+    @media(max-width: 1200px){
+      @content;
+    }
+  }
+@mixin iPad{
+    @media(max-width: 768px){
+      @content;
+    }
+}
+@mixin iPad-below{
+    @media(max-width: 767px){
+      @content;
+    }
+}
+@mixin mobile-lg{/*ipnone6 Plus*/
+    @media(max-width: 414px){
+      @content;
+    }
+}
+@mixin mobile-md{/*ipnone6*/
+    @media(max-width: 375px){
+      @content;
+    }
+}
+@mixin mobile-sm{/*ipnone5*/
+    @media(max-width: 320px){
+      @content;
+    }
+}
+  
